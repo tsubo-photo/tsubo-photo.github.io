@@ -1,109 +1,105 @@
-/* ===== 基本設定 ===== */
+/* ===== 全体 ===== */
 body {
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background: #fafafa;
+  color: #444;
+}
+
+.container {
+  width: 92%;
+  max-width: 980px;
+  margin: 60px auto;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
   color: #333;
-  line-height: 1.8;
-  background: #f5faff;
 }
 
 /* ===== ヘッダー ===== */
-header {
-  background: #ffffff;
-  padding: 20px 40px;
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid #6ec1e4;
+  padding: 18px 40px;
+  background: #ffffffcc;
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
 }
 
-header h1 {
-  font-size: 24px;
-  color: #2c7be5;
+.logo {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-nav a {
+.header nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: #2c7be5;
-  font-weight: bold;
+  color: #333;
+  font-weight: 500;
 }
 
-nav a:hover {
-  opacity: 0.7;
-}
-
-/* ===== メインビジュアル ===== */
+/* ===== ヒーロー ===== */
 .hero {
-  background: url("images/top.jpg")
-    center / cover;
-  height: 45vh; /* ← 高さを小さく */
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 32px;
   color: white;
   text-align: center;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.25);
 }
 
-.hero h2 {
-  background: rgba(44, 123, 229, 0.75);
-  padding: 20px 30px;
+/* ===== グリッド写真 ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-/* ===== セクション ===== */
-section {
-  padding: 60px 40px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.section-title {
-  font-size: 28px;
-  margin-bottom: 20px;
-  border-left: 6px solid #6ec1e4;
-  padding-left: 10px;
-  color: #2c7be5;
-}
-
-/* ===== プロフィール ===== */
-.profile-box {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* ===== 写真グリッド ===== */
-.photo-grid {
+/* ===== 料金カード ===== */
+.price-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
 }
 
-/* ★ 画像サイズ調整（重要） */
-.photo-grid img {
-  width: 100%;
-  height: 220px;              /* ← 高さを制限 */
-  object-fit: cover;          /* ← はみ出し防止 */
+.card {
+  background: white;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 35px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== お客様の声 ===== */
-.voice {
-  background: #e8f4ff;
-  padding: 20px;
-  border-left: 6px solid #2c7be5;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.card .price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3a6ea5;
 }
 
 /* ===== フッター ===== */
 footer {
-  background: #2c7be5;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   font-size: 14px;
-  color: white;
+  color: #666;
 }
