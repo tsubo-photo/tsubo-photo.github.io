@@ -119,8 +119,8 @@ footer {
 
 /* 顔アイコンを大きく */
 .face-icon {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
