@@ -117,25 +117,32 @@ footer {
   font-size: 2rem;
 }
 
-.voice-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+/* 顔アイコンを大きく */
+.face-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 12px auto;
 }
 
+/* カードのデザイン調整 */
 .voice-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: white;
+  padding: 30px 25px 25px 25px;
+  border-radius: 16px;
+  width: 30%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
-.face-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 12px;
+/* カード全体の並び調整 */
+.voice-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
 }
+
+
