@@ -243,3 +243,23 @@ footer {
     white-space: normal;
   }
 }
+
+@media (max-width: 480px) {
+
+  .hero-text h1 {
+    font-size: 20px;
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  /* ★ スマホでは2行に収めるための max-width を設定 */
+  .hero-text {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  /* ★ <br> 位置を固定して2行で収める */
+  .hero-text br {
+    display: inline;
+  }
+}
