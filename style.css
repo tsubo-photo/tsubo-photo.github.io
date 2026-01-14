@@ -68,10 +68,19 @@ h2 {
   position: absolute;
   top: 50%;
   left: 50%;
+
+  /* ▼ これが中央に固定するために必須！（再追加） */
   transform: translate(-50%, -50%);
+
   color: white;
   text-align: center;
-  text-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+  opacity: 0;
+  animation: heroTextFadeIn 1.4s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .hero-text h1 {
