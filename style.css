@@ -264,16 +264,16 @@ footer {
   }
 }
 
-/* ===== スマホでポートフォリオを2列にする ===== */
-.portfolio-grid {
+/* ==== スマホでポートフォリオを2列にする ==== */
+.grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* PCは3列 */
+    grid-template-columns: repeat(3, 1fr); /* PCでは3列 */
     gap: 20px;
 }
 
 @media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* スマホ2列 */
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* スマホは2列 */
         gap: 12px;
     }
 }
