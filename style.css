@@ -314,11 +314,11 @@ footer {
 @keyframes heroTextFadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate(-50%, -40%); /* ← 中央基準で少し下から */
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, -50%); /* ← ど真ん中に戻る */
   }
 }
 
