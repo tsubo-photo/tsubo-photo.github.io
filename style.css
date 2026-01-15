@@ -247,3 +247,31 @@ footer {
     text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+
+  /* ヒーローを縦に伸びすぎないように固定 */
+  .hero {
+    height: 300px; /* ← 横長気味にする（あなたの要望） */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 文字が縦に伸びてしまうバグを修正 */
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  /* スマホで確実に小さくする */
+  .hero-text h1 {
+    font-size: 20px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+}
