@@ -237,3 +237,13 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 480px) {
+
+  .hero-text h1 {
+    font-size: 22px;      /* ← スマホで2行に収まるサイズ */
+    line-height: 1.4;
+    padding: 0 20px;      /* 左右の余白で綺麗に中央揃え */
+    text-align: center;
+  }
+}
