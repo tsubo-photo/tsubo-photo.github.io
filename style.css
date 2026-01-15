@@ -179,13 +179,16 @@ footer {
    スマホ（480px 以下）
    =========================== */
 @media (max-width: 480px) {
-
-  /* ▼ ヒーロー位置調整（中央維持） */
   .hero-text {
-    font-size: 1.8rem;
-    padding: 0 20px;
+    font-size: 1.35rem;   /* ← かなり小さめで2行に収まる */
+    line-height: 1.35;    /* ← 読みやすい行間 */
+    padding: 0 16px;      /* ← 左右に余白 */
     text-align: center;
+    width: 100%;          /* ← はみ出し防止 */
+    max-width: 320px;     /* ← 2行に収めるための幅制限 */
+    margin: 0 auto;       /* ← 中央寄せ */
   }
+}
 
   /* ヘッダー */
   .header {
