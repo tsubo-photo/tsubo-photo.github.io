@@ -276,86 +276,38 @@ footer {
   }
 }
 
-/* =================================
-   PC：お客様の声（2列で余白たっぷり＋縦長カード）
-   ================================= */
-@media (min-width: 768px) {
-  .voice-container {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 70px 80px !important; /* ★横80px・縦70pxに拡大 */
-    max-width: 1200px;         /* ★横幅も広げてゆったり */
-    margin: 60px auto;
-    padding: 0 30px;
-  }
-
-  .voice-card {
+/* PC：2列。余白を広く、正方形、重なり防止 */
+.voice-box {
+    width: calc(50% - 40px); /* 左右20pxずつ余白 → 合計40px */
+    margin: 20px;            /* 上下左右すべて20pxの余白 */
+    aspect-ratio: 1 / 1;     /* 正方形 */
     background: #fff;
-    padding: 50px 40px;        /* ★縦50px・横40px → 大きく */
-    border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-    min-height: 330px;         /* ★★カードの高さをしっかり確保 ★★ */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .voice-card p {
-    margin-top: 20px;
-    line-height: 1.9;
-    text-align: center;
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  .face-icon {
-    width: 100px;              /* アイコンも少し大きく */
-    height: auto;
-  }
+    justify-content: space-between;
 }
 
-/* =================================
-   スマホはそのまま
-   ================================= */
-@media (max-width: 767px) {
-  .voice-container {
+/* ボックス全体の並び（横2列） */
+.voice-list {
     display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .voice-card {
-    padding: 28px 22px;
-    border-radius: 14px;
-  }
+    flex-wrap: wrap;
+    justify-content: center; /* 真ん中に揃える */
+    gap: 0; /* gapは不要。marginを使用 */
 }
 
-/* --- PC（768px以上）2列 --- */
-@media (min-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* PCは2列 */
-        gap: 24px; /* ボックス間の余白を広げる */
+/* スマホは1列（絶対に2列にならない） */
+@media (max-width: 768px) {
+    .voice-box {
+        width: 100%;
+        margin: 10px 0;
+        aspect-ratio: auto; /* 正方形にしない → スマホでは縦長でOK */
     }
 
-    .portfolio-item {
-        aspect-ratio: 1 / 1; /* 正方形 */
-        object-fit: cover;
+    .voice-list {
+        flex-direction: column;
     }
 }
 
-/* =================================
-   スマホはそのまま
-   ================================= */
-@media (max-width: 767px) {
-  .voice-container {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .voice-card {
-    padding: 28px 22px;
-    border-radius: 14px;
-  }
-}
