@@ -276,38 +276,52 @@ footer {
   }
 }
 
-/* PC：2列。余白を広く、正方形、重なり防止 */
-.voice-box {
-    width: calc(50% - 40px); /* 左右20pxずつ余白 → 合計40px */
-    margin: 20px;            /* 上下左右すべて20pxの余白 */
-    aspect-ratio: 1 / 1;     /* 正方形 */
-    background: #fff;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* =======================
+   お客様の声 (voice)
+======================= */
+
+.voice-container {
+  display: grid;
+  grid-template-columns: 1fr;       /* ★スマホは1列固定 */
+  gap: 24px;                        /* ★スマホでも最低限の余白 */
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
-/* ボックス全体の並び（横2列） */
-.voice-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* 真ん中に揃える */
-    gap: 0; /* gapは不要。marginを使用 */
+.voice-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+  /* ★正方形に近づけるために aspect-ratio を使用 */
+  aspect-ratio: 1 / 1;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  gap: 12px;
 }
 
-/* スマホは1列（絶対に2列にならない） */
-@media (max-width: 768px) {
-    .voice-box {
-        width: 100%;
-        margin: 10px 0;
-        aspect-ratio: auto; /* 正方形にしない → スマホでは縦長でOK */
-    }
-
-    .voice-list {
-        flex-direction: column;
-    }
+.face-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
+/* =======================
+   PC以上 (2列)
+======================= */
+@media (min-width: 768px) {
+  .voice-container {
+    grid-template-columns: 1fr 1fr;  /* ★PCは2列 */
+    gap: 40px 60px;                  /* ★左右60px 上下40px しっかり余白 */
+  }
+
+  .voice-card {
+    aspect-ratio: 1 / 1;             /* ★正方形を維持 */
+    padding: 30px;
+  }
+}
