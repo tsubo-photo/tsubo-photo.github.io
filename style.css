@@ -284,11 +284,10 @@ footer {
   grid-template-columns: 1fr; /* スマホ1列 */
   gap: 28px;
   width: 92%;
-  max-width: 1200px;
+  max-width: 1400px; /* ← 横幅を広げて3列のバランス改善 */
   margin: 40px auto;
 }
 
-/* ----- 各カード ----- */
 .voice-card {
   background: #fff;
   padding: 24px;
@@ -300,44 +299,36 @@ footer {
   align-items: center;
   text-align: center;
 
-  /* ★ テキスト量を無視してカードを正方形化する */
-  height: 380px;   /* ←重要！固定高さで綺麗に揃う */
-
+  height: 350px; /* モバイルの高さ控えめ */
   gap: 16px;
 }
 
-/* 顔アイコン */
 .face-icon {
   width: 120px;
   height: 120px;
   object-fit: contain;
 }
 
-/* =======================
-   タブレット：2列
-======================= */
+/* ====== タブレット ====== */
 @media (min-width: 768px) {
   .voice-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 32px;
   }
-
   .voice-card {
-    height: 420px;  /* タブレットでは少し縦に拡大 */
+    height: 380px;
   }
 }
 
-/* =======================
-   PC：3列
-======================= */
+/* ====== PC 3列 ====== */
 @media (min-width: 1024px) {
   .voice-container {
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px; /* カード間の余白を十分に取る */
+    gap: 36px; /* バランス良く */
   }
 
   .voice-card {
-    height: 440px;  /* PCで綺麗な正方形に近い形 */
+    height: 400px; /* 正方形に近づける調整 */
     padding: 32px;
   }
 
@@ -346,3 +337,4 @@ footer {
     height: 140px;
   }
 }
+
