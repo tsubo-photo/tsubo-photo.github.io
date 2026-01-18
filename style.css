@@ -276,32 +276,59 @@ footer {
   }
 }
 
-/* ================================
-   PC：お客様の声を2列にする
-   ================================ */
+/* =================================
+   PC：お客様の声（2列＋余白＋縦長）
+   ================================= */
 @media (min-width: 768px) {
   .voice-container {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 40px !important;
+    gap: 50px 60px !important; /* 縦 50px / 横 60px の余白 */
     max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 0;
+    margin: 50px auto;
+    padding: 0 20px;
   }
 
   .voice-card {
-    width: 100% !important;
-    margin: 0 auto;
+    background: #fff;
+    padding: 40px 35px; /* 縦方向を伸ばす */
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    min-height: 260px;   /* ★縦方向を伸ばす（ここがポイント） */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .voice-card p {
+    margin-top: 15px;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .face-icon {
+    width: 90px;
+    height: auto;
   }
 }
 
-/* ================================
-   スマホ：1列のまま
-   ================================ */
+/* =================================
+   スマホ：今のまま1列
+   ================================= */
 @media (max-width: 767px) {
   .voice-container {
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
+    gap: 20px;
+  }
+
+  .voice-card {
+    padding: 25px 20px;
+    border-radius: 12px;
+    background: #fff;
   }
 }
+
