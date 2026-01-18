@@ -290,26 +290,32 @@ footer {
   }
 }
 
-/* --- PC（768px以上）では2列にする --- */
+/* ================================
+   PC：お客様の声を2列にする
+   ================================ */
 @media (min-width: 768px) {
   .voice-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px; /* カードの余白 */
-    max-width: 1000px; /* 中央寄せ & 読みやすい幅 */
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px !important;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 20px 0;
   }
 
   .voice-card {
-    width: 100%;
+    width: 100% !important;
+    margin: 0 auto;
   }
 }
 
-/* --- スマホ（768px未満）は1列のまま --- */
+/* ================================
+   スマホ：1列のまま
+   ================================ */
 @media (max-width: 767px) {
   .voice-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 }
