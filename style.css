@@ -358,3 +358,30 @@ footer {
   }
 }
 
+/* ▼ PCで必ず3列に固定（最優先） */
+@media (min-width: 1024px) {
+
+  .voice-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px;
+    max-width: 1250px;
+    margin: 60px auto;
+  }
+
+  .voice-card {
+    aspect-ratio: 1 / 1.05;
+    height: auto;
+    padding: 26px 22px;
+  }
+
+  .voice-card p {
+    margin-bottom: 10px;
+  }
+
+  .face-icon {
+    width: 130px;
+    height: 130px;
+  }
+}
+
