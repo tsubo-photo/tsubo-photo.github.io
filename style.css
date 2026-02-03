@@ -105,8 +105,15 @@ h2 {
 /* ===== グリッド写真 ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr); /* スマホは2列のまま */
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* PCだけ3列 */
+    gap: 30px;
+  }
 }
 
 .grid img {
