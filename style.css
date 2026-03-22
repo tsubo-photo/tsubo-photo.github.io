@@ -625,3 +625,7 @@ footer {
 .contact-btn:hover {
   background: #555;
 }
+.about-text p {
+  line-height: 2;
+  letter-spacing: 1px;
+}
