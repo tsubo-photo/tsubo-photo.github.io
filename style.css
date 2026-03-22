@@ -629,3 +629,30 @@ footer {
   line-height: 2;
   letter-spacing: 1px;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ← これが超重要 */
+  padding: 20px 40px;
+}
+
+nav {
+  display: flex;
+  align-items: center; /* ← これで全部揃う */
+  gap: 20px;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: #333;
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 20px;
+  line-height: 1; /* ← これで縦ズレ防止 */
+  transition: 0.3s;
+}
+
+.header {
+  border-bottom: 1px solid #eee;
+}
