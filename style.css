@@ -612,3 +612,16 @@ footer {
     padding: 60px 20px;
   }
 }
+
+.contact-btn {
+  background: #333;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #555;
+}
