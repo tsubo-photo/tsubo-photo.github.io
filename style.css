@@ -483,4 +483,43 @@ footer {
   letter-spacing: 1px;
 }
 
+/* =======================
+   Why セクション（左右反転レイアウト）
+======================= */
+
+.why-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* 左：画像 */
+.why-image {
+  flex: 1;
+  text-align: center;
+}
+
+.why-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* 右：テキスト */
+.why-text {
+  flex: 1;
+}
+
+/* ===== スマホ対応（縦並び） ===== */
+@media (max-width: 768px) {
+  .why-flex {
+    flex-direction: column;
+  }
+
+  .why-image img {
+    max-width: 300px;
+  }
+}
 
