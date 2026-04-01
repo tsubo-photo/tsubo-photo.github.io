@@ -124,7 +124,7 @@ nav {
 
 .grid img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 10px;
 }
