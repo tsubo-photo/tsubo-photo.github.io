@@ -199,7 +199,7 @@ nav {
 }
 
 /* =======================
-   お客様の声
+   お客様の声（完全修正版）
 ======================= */
 .voice-container {
   display: grid;
@@ -210,27 +210,42 @@ nav {
   margin: 40px auto;
 }
 
+/* カード */
 .voice-card {
   background: #fff;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1.1; /* ← 少し縦長でバランス良い */
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
+  justify-content: flex-start;
   text-align: center;
 }
 
+/* 顔 */
 .face-icon {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* タブレット（2列） */
+@media (min-width: 768px) {
+  .voice-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* PC（絶対3列に固定） */
+@media (min-width: 1024px) {
+  .voice-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 /* =======================
