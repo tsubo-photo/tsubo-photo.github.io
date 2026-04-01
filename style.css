@@ -421,3 +421,27 @@ footer {
 
 }
 
+/* =======================
+   ポートフォリオ ホバーズーム
+======================= */
+
+/* はみ出し防止 */
+.grid div {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* 画像にアニメーション */
+.grid img {
+  transition: transform 0.4s ease;
+}
+
+/* ホバーでズーム */
+.grid div:hover img {
+  transform: scale(1.08);
+}
+
+.grid div:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
