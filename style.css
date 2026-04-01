@@ -660,7 +660,7 @@ nav {
 /* スマホだけヒーローを横長にする */
 @media (max-width: 768px) {
   .hero {
-    aspect-ratio: 3 / 1;  /* ← 横3：縦1 */
+    aspect-ratio: 2 / 1;  /* ← 横3：縦1 */
     height: auto;
   }
 }
