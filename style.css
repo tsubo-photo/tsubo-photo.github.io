@@ -1,4 +1,6 @@
-/* ===== 全体 ===== */
+/* =======================
+   全体
+======================= */
 body {
   margin: 0;
   font-family: "Noto Sans JP", sans-serif;
@@ -20,16 +22,19 @@ h2 {
   color: #333;
 }
 
-/* ===== ヘッダー ===== */
+/* =======================
+   ヘッダー
+======================= */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 40px;
+  padding: 20px 40px;
   background: #ffffffcc;
   backdrop-filter: blur(5px);
   position: sticky;
   top: 0;
+  border-bottom: 1px solid #eee;
 }
 
 .logo {
@@ -37,31 +42,59 @@ h2 {
   font-weight: 700;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .header nav a {
-  margin-left: 20px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
 
-/* ===== ヒーロー ===== */
+.contact-btn {
+  display: inline-block;
+  background: #333;
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 20px;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #555;
+}
+
+/* =======================
+   ヒーロー
+======================= */
 .hero {
   position: relative;
   width: 100%;
   height: 360px;
-  overflow: hidden;
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: heroFade 1.2s ease-out forwards;
+  animation: heroZoomFade 1.5s ease-out forwards;
 }
 
-/* ===== ヒーローおしゃれフェード ===== */
-
-.hero {
-  animation: heroZoomFade 1.8s ease-out forwards;
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  opacity: 0;
+  animation: fadeInText 1.2s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 @keyframes heroZoomFade {
@@ -75,350 +108,52 @@ h2 {
   }
 }
 
-/* テキストも少し遅れて出す */
-.hero-text {
-  animation: fadeInText 1.6s ease-out forwards;
-  animation-delay: 0.4s;
-}
-
-
-/* ===== 位置ズレしないヒーローテキスト ===== */
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2.0rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(0,0,0,0.4);
-  opacity: 0;
-  animation: fadeInText 1.4s ease-out forwards;
-}
-
-/* transform を一切書かない安全なアニメーション */
 @keyframes fadeInText {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* ===== グリッド写真 ===== */
+/* =======================
+   グリッド（ポートフォリオ）
+======================= */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* スマホは2列のまま */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-}
-
-@media screen and (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr); /* PCだけ3列 */
-    gap: 30px;
-  }
 }
 
 .grid img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* ===== 料金カード ===== */
-.price-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 35px 20px;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-.card .price {
-  font-size: 24px;
-  font-weight: bold;
-  color: #3a6ea5;
-}
-
-/* ===== フッター ===== */
-footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 14px;
-  color: #666;
-}
-
-/* ===== お客様の声 ===== */
-.voice-section {
-  max-width: 1100px;
-  margin: 80px auto;
-  padding: 0 20px;
-}
-
-.voice-section h1 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
-}
-
-/* 顔アイコン */
-.face-icon {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 12px auto;
-}
-
-/* カード */
-.voice-card {
-  background: white;
-  padding: 30px 25px 25px 25px;
-  border-radius: 16px;
-  width: 30%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-/* 並び */
-.voice-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-}
-
-/* ===========================
-   スマホ（480px 以下）
-   =========================== */
-@media (max-width: 480px) {
-  .hero-text {
-    font-size: 1.35rem;   /* ← かなり小さめで2行に収まる */
-    line-height: 1.35;    /* ← 読みやすい行間 */
-    padding: 0 16px;      /* ← 左右に余白 */
-    text-align: center;
-    width: 100%;          /* ← はみ出し防止 */
-    max-width: 320px;     /* ← 2行に収めるための幅制限 */
-    margin: 0 auto;       /* ← 中央寄せ */
-  }
-}
-
-  /* ヘッダー */
-  .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-    gap: 10px;
-  }
-
-  .logo {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .header nav a {
-    font-size: 14px;
-  }
-
-  /* 声 */
-  .voice-section h1 { font-size: 20px; }
-
-  .voice-card p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .face-icon {
-    width: 80px;
-    height: 80px;
-  }
-
-  .voice-card {
-    padding: 20px;
-    width: 100%;
-  }
-
-  /* ▼ ポートフォリオをスマホ２列に */
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-
-  .hero-text h1 {
-    font-size: 22px;      /* ← スマホで2行に収まるサイズ */
-    line-height: 1.4;
-    padding: 0 20px;      /* 左右の余白で綺麗に中央揃え */
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-
-  /* ヒーローを縦に伸びすぎないように固定 */
-  .hero {
-    height: 300px; /* ← 横長気味にする（あなたの要望） */
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* 文字が縦に伸びてしまうバグを修正 */
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    text-align: center;
-  }
-
-  /* スマホで確実に小さくする */
-  .hero-text h1 {
-    font-size: 20px !important;
-    line-height: 1.5 !important;
-    letter-spacing: 1px;
-    margin: 0;
-  }
-}
-
-/* =======================
-   お客様の声
-======================= */
-.voice-container {
-  display: grid;
-  grid-template-columns: 1fr; /* スマホ1列 */
-  gap: 28px;
-  width: 92%;
-  max-width: 1400px; /* ← 横幅を広げて3列のバランス改善 */
-  margin: 40px auto;
-}
-
-.voice-card {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  height: 350px; /* モバイルの高さ控えめ */
-  gap: 16px;
-}
-
-.face-icon {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-}
-
-/* ====== タブレット ====== */
-@media (min-width: 768px) {
-  .voice-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-  .voice-card {
-    height: 380px;
-  }
-}
-
-/* ====== PC 3列 ====== */
-/* ▼ PC向けカードレイアウト最適化 ▼ */
-@media (min-width: 768px) {
-
-  .voice-cards {
-    display: flex;
-    justify-content: center;
-    gap: 32px; /* カード間の横・縦の隙間 */
-    flex-wrap: nowrap; /* 3つ横並びを維持 */
-    margin: 0 auto;
-    max-width: 1200px; /* 過剰な広がりを防止 */
-  }
-
-  .voice-card {
-    flex: 1;
-    max-width: 360px;              /* カード幅の上限 */
-    aspect-ratio: 1 / 1.05;        /* なるべく正方形、少しだけ縦長 */
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;   /* 画像・文字の詰まり防止 */
-    align-items: center;
-  }
-
-  /* コメント下の余白を自然に */
-  .voice-card p {
-    margin-bottom: 12px;
-  }
-
-  /* 顔イラストの調整 */
-  .voice-card img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    margin-bottom: 16px;
-  }
-}
-
-/* ▼ PCで必ず3列に固定（最優先） */
 @media (min-width: 1024px) {
-
-  .voice-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px;
-    max-width: 1250px;
-    margin: 60px auto;
-  }
-
-  .voice-card {
-    aspect-ratio: 1 / 1.05;
-    height: auto;
-    padding: 26px 22px;
-  }
-
-  .voice-card p {
-    margin-bottom: 10px;
-  }
-
-  .face-icon {
-    width: 130px;
-    height: 130px;
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
 /* =======================
-   ツボについて（写真あり2カラム）
+   About（上段）
 ======================= */
-
 .about-flex {
   display: flex;
   align-items: center;
   gap: 50px;
 }
 
-/* 左：テキスト */
 .about-text {
   flex: 1;
 }
 
-/* 右：写真 */
+.about-text p {
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
 .about-image {
   flex: 1;
   text-align: center;
@@ -432,101 +167,9 @@ footer {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-/* ===== スマホは縦並び（今まで通り） ===== */
-@media (max-width: 768px) {
-  .about-flex {
-    flex-direction: column;
-  }
-
-  .about-image img {
-    max-width: 300px;
-  }
-}
-
-/* ===== スクロールフェード ===== */
-
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease-out;
-}
-
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* スマホ：2列（今のまま） */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-/* PC：3列 */
-@media screen and (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-}
-
-/* ポートフォリオ メッセージ */
-.portfolio-message {
-  text-align: center;   /* ← 横中央 */
-  margin: 40px auto;    /* ← 上下余白 */
-}
-
-.portfolio-message p {
-  font-size: 18px;
-  color: #555;
-  letter-spacing: 1px;
-}
-
 /* =======================
-   Why セクション（左右反転レイアウト）
+   Why（下段）
 ======================= */
-
-.why-flex {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
-/* 左：画像 */
-.why-image {
-  flex: 1;
-  text-align: center;
-}
-
-.why-image img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-
-/* 右：テキスト */
-.why-text {
-  flex: 1;
-}
-
-/* ===== スマホ対応（縦並び） ===== */
-@media (max-width: 768px) {
-  .why-flex {
-    flex-direction: column;
-  }
-
-  .why-image img {
-    max-width: 300px;
-  }
-}
-
-/* =======================
-   Why セクション
-======================= */
-
 .why-flex {
   display: flex;
   align-items: center;
@@ -551,35 +194,65 @@ footer {
   flex: 1;
 }
 
-.why-text h2 {
-  margin-bottom: 20px;
-}
-
 .why-text p {
-  margin-bottom: 15px;
   line-height: 1.8;
 }
 
+/* =======================
+   お客様の声
+======================= */
+.voice-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 92%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.voice-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.face-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .voice-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .voice-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* =======================
    CTA
 ======================= */
-
 .cta {
   text-align: center;
   padding: 80px 20px;
   background: #f8f8f8;
   margin-top: 80px;
-}
-
-.cta h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.cta p {
-  margin-bottom: 30px;
-  color: #666;
 }
 
 .cta-button {
@@ -597,76 +270,67 @@ footer {
   transform: translateY(-2px);
 }
 
+/* =======================
+   フッター
+======================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* =======================
+   アニメーション
+======================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* =======================
    スマホ対応
 ======================= */
-
 @media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    aspect-ratio: 3 / 1;
+    height: auto;
+  }
+
+  .hero-text {
+    width: 90%;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .about-flex,
   .why-flex {
     flex-direction: column;
     gap: 30px;
   }
 
-  .cta {
-    padding: 60px 20px;
-  }
-}
-
-.contact-btn {
-  background: #333;
-  color: #fff !important;
-  padding: 8px 16px;
-  border-radius: 20px;
-  margin-left: 10px;
-  transition: 0.3s;
-}
-
-.contact-btn:hover {
-  background: #555;
-}
-.about-text p {
-  line-height: 2;
-  letter-spacing: 1px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* ← これが超重要 */
-  padding: 20px 40px;
-}
-
-nav {
-  display: flex;
-  align-items: center; /* ← これで全部揃う */
-  gap: 20px;
-}
-
-.contact-btn {
-  display: inline-block;
-  background: #333;
-  color: #fff !important;
-  padding: 10px 18px;
-  border-radius: 20px;
-  line-height: 1; /* ← これで縦ズレ防止 */
-  transition: 0.3s;
-}
-
-.header {
-  border-bottom: 1px solid #eee;
-}
-
-/* スマホだけヒーローを横長にする */
-@media (max-width: 768px) {
-  .hero {
-    aspect-ratio: 2 / 1;  /* ← 横3：縦1 */
-    height: auto;
-  }
-}
-
-@media (max-width: 768px) {
   .why-text {
-    margin-bottom: 20px;
+    order: -1; /* ← これで「文章→写真」に変更 */
+  }
+
+  .about-image img,
+  .why-image img {
+    max-width: 300px;
   }
 }
