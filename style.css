@@ -233,18 +233,6 @@ nav {
   margin-bottom: 10px;
 }
 
-@media (min-width: 768px) {
-  .voice-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .voice-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* =======================
    CTA
 ======================= */
@@ -297,13 +285,24 @@ footer {
 /* =======================
    スマホ対応
 ======================= */
+/* =======================
+   スマホ対応（これだけ残す）
+======================= */
 @media (max-width: 768px) {
 
+  /* ヘッダー */
   .header {
     flex-direction: column;
     gap: 10px;
+    padding: 15px 10px;
   }
 
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ヒーロー */
   .hero {
     aspect-ratio: 3 / 1;
     height: auto;
@@ -319,18 +318,32 @@ footer {
     line-height: 1.5;
   }
 
+  /* About / Why */
   .about-flex,
   .why-flex {
     flex-direction: column;
     gap: 30px;
   }
 
+  /* Whyの順番を上に */
   .why-text {
-    order: -1; /* ← これで「文章→写真」に変更 */
+    order: -1;
   }
 
+  /* 画像サイズ */
   .about-image img,
   .why-image img {
     max-width: 300px;
   }
+
+  /* グリッド */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* voice */
+  .voice-container {
+    grid-template-columns: 1fr;
+  }
+
 }
