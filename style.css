@@ -531,3 +531,57 @@ h2 {
   color: #333;
   text-decoration: underline;
 }
+
+/* 実績セクション */
+.achievements {
+  text-align: center;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.achievement-box {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* サービス名 */
+.service {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* 👇 主役（数字） */
+.big-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111;
+  margin: 10px 0;
+}
+
+/* 補足 */
+.label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ボタン化（重要） */
+.achievement-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #333;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.achievement-btn:hover {
+  background: #555;
+}
