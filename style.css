@@ -498,3 +498,36 @@ h2 {
 .cta-button:hover {
   background: #555;
 }
+
+.achievements {
+  text-align: center;
+  margin: 80px auto;
+}
+
+.achievement-box {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #fafafa;
+}
+
+.achievement-box .service {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.achievement-box .highlight {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.achievement-box a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #333;
+  text-decoration: underline;
+}
