@@ -555,3 +555,23 @@ h2 {
 .achievement-btn:hover {
   background: #555;
 }
+
+/* =======================
+   PCレイアウト修正
+======================= */
+@media screen and (min-width: 768px) {
+
+  .about,
+  .why {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .about > div,
+  .why > div {
+    width: 48%;
+  }
+
+}
