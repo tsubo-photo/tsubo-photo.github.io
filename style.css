@@ -150,6 +150,10 @@ nav {
   background-position: center 30%;
 }
 
+.price .hero {
+  background-position: center 40%;
+}
+
 @keyframes heroZoomFade {
   from {
     opacity: 0;
