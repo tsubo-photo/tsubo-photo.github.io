@@ -131,31 +131,20 @@ nav {
    ページごとのヒーロー位置調整
 ======================= */
 
-/* デフォルト（全ページ共通） */
+/* =======================
+   デフォルト（中央配置）
+======================= */
 .hero-text {
-  bottom: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* トップページ */
 .index .hero-text {
-  bottom: 40px;
+  top: 60%;
 }
-
-/* Portfolioページ */
-.portfolio .hero-text {
-  bottom: 0px;
-}
-
-/* 料金ページ */
-.price .hero-text {
-  bottom: 0px;
-}
-
-/* Voiceページ */
-.voice .hero-text {
-  bottom: 0px;
-}
-
 
 @keyframes heroZoomFade {
   from {
