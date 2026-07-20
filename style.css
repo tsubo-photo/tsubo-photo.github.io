@@ -154,6 +154,10 @@ nav {
   background-position: center 20%;
 }
 
+.voice .hero {
+  background-position: center 70%;
+}
+
 @keyframes heroZoomFade {
   from {
     opacity: 0;
