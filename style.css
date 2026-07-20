@@ -143,15 +143,15 @@ nav {
 
 /* トップページ */
 .index .hero-text {
-  top: 70%;
+  top: 80%;
 }
 
-.portfilio .hero {
+.portfolio .hero {
   background-position: center 30%;
 }
 
 .price .hero {
-  background-position: center 40%;
+  background-position: center 30%;
 }
 
 @keyframes heroZoomFade {
