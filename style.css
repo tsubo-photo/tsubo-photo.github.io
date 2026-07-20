@@ -110,9 +110,9 @@ nav {
 .hero-text {
   position: relative;
   z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+　justify-content: center;  /* 横中央 */
+　align-items: flex-end;    /* 下寄せ */
+　padding-bottom: 40px;
   color: white;
   font-size: 2rem;
   font-weight: bold;
