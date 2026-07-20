@@ -142,17 +142,17 @@ nav {
 
 /* Portfolioページ */
 .portfolio .hero-text {
-  bottom: 120px;
+  bottom: 30px;
 }
 
 /* 料金ページ */
 .price .hero-text {
-  bottom: 60px;
+  bottom: 130px;
 }
 
 /* Voiceページ */
 .voice .hero-text {
-  bottom: 60px;
+  bottom: 30px;
 }
 
 
