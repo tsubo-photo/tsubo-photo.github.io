@@ -443,7 +443,7 @@ footer {
     aspect-ratio: 2 / 1.2;
     height: auto;
   }
-
+   
   .hero-text {
     width: 90%;
     text-align: center;
@@ -460,6 +460,18 @@ footer {
     flex-direction: column;
     gap: 30px;
   }
+   
+.portfolio .hero {
+  background-position: center 70%;
+}
+
+.price .hero {
+  background-position: center 20%;
+}
+
+.voice .hero {
+  background-position: center 70%;
+}
 
   /* Whyの順番を上に */
   .why-text {
