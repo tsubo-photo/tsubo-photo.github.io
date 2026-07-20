@@ -146,6 +146,9 @@ nav {
   top: 70%;
 }
 
+.portfilio .hero {
+  background-position: center 30%;
+}
 
 @keyframes heroZoomFade {
   from {
