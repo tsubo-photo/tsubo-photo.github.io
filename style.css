@@ -102,7 +102,7 @@ nav {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.20);
+  background: rgba(0,0,0,0.40);
   z-index: 0;
 }
 
