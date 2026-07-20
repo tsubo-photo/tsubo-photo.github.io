@@ -138,22 +138,22 @@ nav {
 
 /* トップページ */
 .index .hero-text {
-  bottom: 30px;
+  bottom: 40px;
 }
 
 /* Portfolioページ */
 .portfolio .hero-text {
-  bottom: 30px;
+  bottom: 0px;
 }
 
 /* 料金ページ */
 .price .hero-text {
-  bottom: 30px;
+  bottom: 0px;
 }
 
 /* Voiceページ */
 .voice .hero-text {
-  bottom: 130px;
+  bottom: 0px;
 }
 
 
