@@ -126,6 +126,36 @@ nav {
   animation-delay: 0.3s;
 }
 
+/* =======================
+   ページごとのヒーロー位置調整
+======================= */
+
+/* デフォルト（全ページ共通） */
+.hero-text {
+  bottom: 40px;
+}
+
+/* トップページ */
+.index .hero-text {
+  bottom: 80px;
+}
+
+/* Portfolioページ */
+.portfolio .hero-text {
+  bottom: 120px;
+}
+
+/* 料金ページ */
+.price .hero-text {
+  bottom: 60px;
+}
+
+/* Voiceページ */
+.voice .hero-text {
+  bottom: 60px;
+}
+
+
 @keyframes heroZoomFade {
   from {
     opacity: 0;
