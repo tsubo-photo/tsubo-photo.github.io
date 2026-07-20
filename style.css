@@ -561,17 +561,21 @@ h2 {
 ======================= */
 @media screen and (min-width: 768px) {
 
-  .about,
-  .why {
+  /* aboutはOK */
+  .about {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
   }
 
-  .about > div,
-  .why > div {
+  .about > div {
     width: 48%;
+  }
+
+  /* whyはflexにしない */
+  .why {
+    display: block;
   }
 
 }
