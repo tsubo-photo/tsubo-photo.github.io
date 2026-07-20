@@ -100,6 +100,29 @@ nav {
   animation: heroZoomFade 1.5s ease-out forwards;
 }
 
+.hero-text {
+  position: absolute;   /* ←変更 */
+  bottom: 0;            /* ←追加 */
+  left: 0;              /* ←追加 */
+  width: 100%;          /* ←追加 */
+
+  display: flex;        /* ←追加（これが一番重要） */
+  justify-content: center;
+  align-items: flex-end;
+
+  padding-bottom: 40px;
+
+  z-index: 1;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+
+  opacity: 0;
+  animation: fadeInText 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
 .hero::before {
   content: "";
   position: absolute;
