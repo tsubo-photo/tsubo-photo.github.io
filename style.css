@@ -14,18 +14,23 @@ body {
   margin: 60px auto;
 }
 
-/* 見出し */
-h1 {
-  font-size: 32px;
-  letter-spacing: 2px;
-}
-
 h2 {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
   text-align: center;
   color: #333;
+}
+
+/* 全体 */
+h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
 /* ヒーロー専用 */
@@ -92,6 +97,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: heroZoomFade 1.5s ease-out forwards;
 }
 
 .hero-text {
@@ -103,6 +109,25 @@ nav {
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  opacity: 0;
+  animation: fadeInText 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes heroZoomFade {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* =======================
@@ -159,6 +184,8 @@ nav {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
+
+
 /* =======================
    Why（下段）
 ======================= */
@@ -191,7 +218,7 @@ nav {
 }
 
 /* =======================
-   お客様の声
+   お客様の声（完全修正版）
 ======================= */
 .voice-container {
   display: grid;
@@ -202,18 +229,23 @@ nav {
   margin: 40px auto;
 }
 
+/* カード */
 .voice-card {
   background: #fff;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  aspect-ratio: 1 / 1.1;
+
+  aspect-ratio: 1 / 1.1; /* ← 少し縦長でバランス良い */
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   text-align: center;
 }
 
+/* 顔 */
 .face-icon {
   width: 110px;
   height: 110px;
@@ -221,51 +253,17 @@ nav {
   margin-bottom: 15px;
 }
 
+/* タブレット（2列） */
 @media (min-width: 768px) {
   .voice-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* PC（絶対3列に固定） */
 @media (min-width: 1024px) {
   .voice-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* =======================
-   料金
-======================= */
-.price-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px 20px;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.card .price {
-  font-size: 26px;
-  font-weight: bold;
-  color: #333;
-}
-
-@media (min-width: 768px) {
-  .price-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .price-cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
@@ -286,7 +284,30 @@ nav {
   color: #fff;
   text-decoration: none;
   border-radius: 30px;
+  transition: 0.3s;
 }
+
+.cta-button:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+/* =======================
+   ポートフォリオメッセージ
+======================= */
+.portfolio-message {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 800px; /* ← 横幅制限で綺麗に中央 */
+}
+
+.portfolio-message p {
+  font-size: 20px;   /* ← 少し大きく */
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  color: #444;
+}
+
 
 /* =======================
    フッター
@@ -299,10 +320,69 @@ footer {
 }
 
 /* =======================
-   スマホ対応
+   アニメーション
+======================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   料金カード（復活用）
+======================= */
+.price-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card {
+  display: block; /* ← 念のため復活 */
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card .price {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* タブレット以上 */
+@media (min-width: 768px) {
+  .price-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* PC */
+@media (min-width: 1024px) {
+  .price-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =======================
+   スマホ対応（これだけ残す）
 ======================= */
 @media (max-width: 768px) {
 
+  /* ヘッダー */
   .header {
     flex-direction: column;
     gap: 10px;
@@ -314,6 +394,7 @@ footer {
     justify-content: center;
   }
 
+  /* ヒーロー */
   .hero {
     aspect-ratio: 2 / 1.2;
     height: auto;
@@ -329,18 +410,168 @@ footer {
     line-height: 1.5;
   }
 
+  /* About / Why */
   .about-flex,
   .why-flex {
     flex-direction: column;
     gap: 30px;
   }
 
+  /* Whyの順番を上に */
   .why-text {
     order: -1;
   }
 
+  /* 画像サイズ */
   .about-image img,
   .why-image img {
     max-width: 300px;
   }
+
+  /* グリッド */
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* voice */
+  .voice-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =======================
+   ポートフォリオ ホバーズーム
+======================= */
+
+/* はみ出し防止 */
+.grid div {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* 画像にアニメーション */
+.grid img {
+  transition: transform 0.4s ease;
+}
+
+/* ホバーでズーム */
+.grid div:hover img {
+  transform: scale(1.08);
+}
+
+.grid div:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+
+h2 {
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.cta h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #555;
+}
+
+
+/* 実績セクション */
+.achievements {
+  text-align: center;
+  margin: 120px auto;
+  padding: 0 20px;
+}
+
+.achievement-box {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* サービス名 */
+.service {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* 👇 主役（数字） */
+.big-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #111;
+  margin: 10px 0;
+}
+
+/* 補足 */
+.label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ボタン化（重要） */
+.achievement-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: #333;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.achievement-btn:hover {
+  background: #555;
+}
+
+/* =======================
+   PCレイアウト修正
+======================= */
+@media screen and (min-width: 768px) {
+
+  .about,
+  .why {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .about > div,
+  .why > div {
+    width: 48%;
+  }
+
 }
